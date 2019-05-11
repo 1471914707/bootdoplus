@@ -48,10 +48,10 @@
 
 
 		function bindList(offset) {
-		    Api.get(Api.BlogOpenList,
-					{type:"article",limit:10,offset:offset},
+		    Api.get(Api.BlogOpenList + "?type=article&limit=10&offset="+offset,
+					{},
 					function (data) {
-		        		if (!data) return ;
+		        		if (data) return ;
                         var rows = data.rows;
                         total = data.total;
                         var htmlText = "";
